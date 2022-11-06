@@ -11,14 +11,17 @@ const Blog: NextPage = () => {
 
   const [fetchedPosts, setPosts] = useState<IPost[]>()
   const [fetchingError, setFetchinGError] = useState<string>('')
+  const [fetching, setFetching] = useState<boolean>(true)
 
   const fetchAllPosts = async () => {
     try {
       const posts: IAxiosPosts = await axiosBaseUrl.get('/posts')
       setPosts(posts.data)
+      setFetching(false)
       return posts.data
     } catch (error) {
-      setFetchinGError('Unexpected Error occureed Please Try Again')
+      setFetching(false)
+      setFetchinGError('Unexpected Error occureed Please Try Again Or There is No Posts')
     }
   }
 
@@ -26,7 +29,7 @@ const Blog: NextPage = () => {
     fetchAllPosts()
   }, [])
 
-  if (!fetchedPosts) {
+  if (fetching) {
     return (
       <>
         <Head>
