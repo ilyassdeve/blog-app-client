@@ -10,9 +10,8 @@ const Home: NextPage = () => {
       </Head>
       <div className='my-40'>
         <Title className='text-center'>Hello There</Title>
-        <Title className='text-center'>I'm Ilyas and I'm Donkey</Title>
-        <Title order={2} className='text-center'>Bad Chess Player with no experiencee in any field </Title>
-        <Title order={2} className='text-center text-teal-500'>Sorry But I'm Dumb 😂</Title>
+        <Title order={2} className='text-center'>I'm Ilyas I'm chess player </Title>
+        <Title order={2} className='text-center text-teal-500'>I will Teach you Chess For Free</Title>
         <div className='flex justify-center mt-5'>
           <Button component={NextLink} href='/blog' size='lg' color='pink'>Explore</Button>
         </div>

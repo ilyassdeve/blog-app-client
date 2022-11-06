@@ -12,8 +12,8 @@ const Login: NextPage = () => {
   const [loginError, setLoginError] = useState<string>()
 
   const dummyAdminData = {
-    email: 'ilyas@gmail.com',
-    password: "I'm Dumb"
+    email: 'ilyasaitali@gmail.com',
+    password: "IlyassAitAli20005"
   }
 
   const handleAdminLogin = () => {

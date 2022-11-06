@@ -36,7 +36,7 @@ const Blog: NextPage = () => {
           <title>Blogs</title>
         </Head>
         <Center className="mt-40">
-          <Loader size="xl" variant="dots" />;
+          <Loader size="xl" variant="dots" />
         </Center>
       </>
     )
