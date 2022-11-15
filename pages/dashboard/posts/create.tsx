@@ -1,11 +1,11 @@
 import { Button, Container, Input, Text, Textarea, Title } from "@mantine/core"
 import { useState } from "react"
-import ReactMarkdown from "react-markdown"
 import Image from "next/future/image"
 import { axiosBaseUrl } from "../../../axios/axios"
 import toast, { Toaster } from "react-hot-toast"
 
 import Head from "next/head"
+import { marked } from "marked"
 const Create = () => {
 
     const [postTitle, setPostTitle] = useState<string>('')
@@ -69,9 +69,7 @@ const Create = () => {
                         <Image src={postCoverImage.toString()} className='w-full' alt="hello" width={500} height={300} />
                     )}
                     <Title className="text-center my-5"> {postTitle.toUpperCase()} </Title>
-                    <ReactMarkdown>
-                        {postBody}
-                    </ReactMarkdown>
+                    <div dangerouslySetInnerHTML={{ __html: marked(postBody) }}></div>
 
                     <div className="flex justify-center my-10">
                         <Button size="md" color='teal' onClick={handleCreatePost}>Create Post</Button>

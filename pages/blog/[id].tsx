@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown"
 import CreateComment from "../../components/Comments/CreateComment"
 import CommentList from "../../components/Comments/CommentList"
 
+import { marked } from 'marked'
+
 import Image from 'next/future/image'
 import Head from 'next/head'
 
@@ -30,9 +32,7 @@ const BlogId: NextPage<GetServer> = ({ post }) => {
                 <Image src={post.coverImage.toString()} className='w-full' alt="hello" width={500} height={400} />
                 <Title className="text-center mt-10"> {post.title.toUpperCase()} </Title>
                 <Container className="mb-20">
-                    {post.body && <ReactMarkdown>
-                        {post.body}
-                    </ReactMarkdown>}
+                    <div dangerouslySetInnerHTML={{ __html: marked(post.body) }}></div>
                 </Container>
 
             </Container>
